@@ -1,0 +1,67 @@
+<div class="container" style="text-align: center">
+
+    
+    <p style="font-size: 20px;">Select the category you want to know the info for that are books,characters or houses, </p>
+    
+    <div class="btn-group" dropdown>
+        <button id="button-basic" dropdownToggle type="button" class="btn {{button}} dropdown-toggle"
+                aria-controls="dropdown-basic">
+          {{buttonText}} <span class="caret"></span>
+        </button>
+        <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+            role="menu" aria-labelledby="button-basic">
+          <li role="menuitem" (click)="showAllBooks()"><a class="dropdown-item"  href="#" >Books</a></li>
+          <li role="menuitem" (click)="showAllCharacters()"><a class="dropdown-item"  href="#">Characters</a></li>
+          <li role="menuitem" (click)="showAllHouses()"><a class="dropdown-item"  href="#">Houses</a></li>
+          <li role="menuitem"><a class="dropdown-item" (click)="goToDefault()" href="#">Back to menu</a></li>
+          <li class="divider dropdown-divider"></li>
+          
+        </ul>
+      </div>
+  <div class="row" style="text-align: center" *ngIf="flag4">  
+  <div *ngFor= "let blog of gotList; let i = index" class="col-md-4" style="padding: 20px;" >
+    <div class="card {{cardStyle}} [i]" style="width: 18rem;">
+      
+      <div class="card-body text-white {{cardStyle}}">
+        <h5 class="card-title">{{blog.name}}</h5>
+        <p class="card-text" *ngIf="i==0 && flag1">A Game of Thrones is the first novel in A Song of Ice and Fire </p>
+        <p class="card-text" *ngIf="i==1 && flag1">A Clash of Kings is the second novel in A Song of Ice and Fire </p>
+        <p class="card-text" *ngIf="i==2 && flag1">A Storm of Swords is the third of seven planned novels in A Song of Ice and Fire </p>
+        <p class="card-text" *ngIf="i==3 && flag1">The Hedge Knight is a short story by George R. R. Martin that first appeared in the Legends anthology</p>
+        <p class="card-text" *ngIf="i==4 && flag1">A Feast for Crows is the fourth of seven planned novels in the epic fantasy series </p>
+        <p class="card-text" *ngIf="i==5 && flag1">The Sworn Sword is the second in George R. R. Martin's Tales of Dunk and Egg, following the the story of the hedge knight Duncan the Tall</p>
+        <p class="card-text" *ngIf="i==6 && flag1">The Mystery Knight is the third in the series of "Dunk and Egg" stories.  </p>
+        <p class="card-text" *ngIf="i==7 && flag1">A Dance with Dragons is the fifth of seven planned novels in the epic fantasy series A Song of Ice and Fire  </p>
+        <p class="card-text" *ngIf="i==8 && flag1">The Princess and The Queen is a novella and part of the Dangerous Women anthology </p>
+        <p class="card-text" *ngIf="i==9 && flag1">The Rogue Prince, or, A King's Brother is a novelette and part of the Rogues anthology </p>
+        
+        <p class="card-text" *ngIf="i==0 && flag2">Ser Jon Penrose a knight of House Penrose during the reign of King Daeron II Targaryen. </p>
+        <p class="card-text" *ngIf="i==1 && flag2">Ser Jon Redfort is a knight of House Redfort and a son of Lord Horton Redfort.</p>
+        <p class="card-text" *ngIf="i==2 && flag2">Jon Snow is the bastard son of Eddard Stark, Lord of Winterfell </p>
+        <p class="card-text" *ngIf="i==3 && flag2">Jon Stark was a King in the North and head of House Stark</p>
+        <p class="card-text" *ngIf="i==4 && flag2">Jon Umber, known as Greatjon Umber and the Greatjon, is Lord of the Last Hearth and head of House Umber</p>
+        <p class="card-text" *ngIf="i==5 && flag2">Jon Umber, known as the Smalljon and Smalljon Umber is the eldest son of Lord Greatjon Umber and is the heir to the Last Hearth</p>
+        <p class="card-text" *ngIf="i==6 && flag2">Ser Jon Wylde is a knight of House Wylde  </p>
+        <p class="card-text" *ngIf="i==7 && flag2">Jonelle Cerwyn is a member of House Cerwyn and is the daughter of Lord Medger Cerwyn  </p>
+        <p class="card-text" *ngIf="i==8 && flag2">Lord Jonnel Stark, also known as One-Eye, was a Lord of Winterfell and the head of House Stark </p>
+        <p class="card-text" *ngIf="i==9 && flag2">Jonos Frey is a member of House Frey, the second son of Rhaegar Frey and Jeyne Beesbury </p>
+
+        <p class="card-text" *ngIf="i==0 && flag3">House Algood is a noble house from the Westerlands.. </p>
+        <p class="card-text" *ngIf="i==1 && flag3">House Allyrion of Godsgrace is a major Dornish noble house</p>
+        <p class="card-text" *ngIf="i==2 && flag3">House Amber was a noble house from what is now the north </p>
+        <p class="card-text" *ngIf="i==3 && flag3">House Ambrose is a noble house from the Reach</p>
+        <p class="card-text" *ngIf="i==4 && flag3">House Appleton of Appleton is a noble house from Appleton in the Reach</p>
+        <p class="card-text" *ngIf="i==5 && flag3">House Arryn of Gulltown is a small cadet branch of House Arryn located in the city of Gulltown</p>
+        <p class="card-text" *ngIf="i==6 && flag3">House Arryn of the Eyrie is one of the Great Houses of Westeros, and is the principal noble house in the Vale of Arryn</p>
+        <p class="card-text" *ngIf="i==7 && flag3">House Ashford of Ashford is a noble house from Ashford in the Reach</p>
+        <p class="card-text" *ngIf="i==8 && flag3">House Ashwood is a noble house in the north</p>
+        <p class="card-text" *ngIf="i==9 && flag3">House Baelish of Harrenhal is a noble house from Harrenhal in the riverlands</p>
+      </div>
+      
+      <div class="card-body text-black {{cardStyle}}">
+          <button type="button" class="btn btn-secondary"  [routerLink] = "['/api',i]" (click)="getDetailsView(i)">View</button>
+      </div>
+    </div>
+</div>
+</div>
+</div>

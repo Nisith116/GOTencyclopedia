@@ -1,0 +1,85 @@
+<div class="container">
+    <div class="row" *ngIf="GotData">
+      <div class="col-md-12" >
+        <div class="image" *ngIf="flag1">
+          <img style="height:300px;text-align: center"  src="./assets/AClashOfKings.jpg" alt="" *ngIf="blogId == 2">
+          <img style="height:300px;text-align: center" src="./assets/dance-with-dragons.jpeg" alt="" *ngIf="blogId == 8">
+          <img style="height:300px;text-align: center" src="./assets/feast-for-crows.jpg" alt="" *ngIf="blogId == 5">
+          <img style="height:300px;text-align: center" src="./assets/rogue-prince.jpg" alt="" *ngIf="blogId == 10">
+          <img style="height:300px;text-align: center" src="./assets/hedge-knight.jpg" alt="" *ngIf="blogId == 4">
+          <img style="height:300px;text-align: center" src="./assets/mystery-knight.jpg" alt="" *ngIf="blogId == 7">
+          <img style="height:300px;text-align: center" src="./assets/queen.jpg" alt="" *ngIf="blogId == 9">
+          <img style="height:300px;text-align: center" src="./assets/storm-of-swords.jpg" alt="" *ngIf="blogId == 3">
+          <img style="height:300px;text-align: center" src="./assets/the-sworn-sword.png" alt="" *ngIf="blogId == 6">
+          <img style="height:300px;text-align: center" src="./assets/game-of-thrones.jpg" alt="" *ngIf="blogId == 1">
+        </div>
+        <div class="image" *ngIf="flag2">
+          <img style="height:300px;text-align: center"  src="./assets/penrose1.jpg" alt="" *ngIf="blogId == 1">
+          <img style="height:300px;text-align: center" src="./assets/redfort.jpg" alt="" *ngIf="blogId == 2">
+          <img style="height:300px;text-align: center" src="./assets/snow.jpg" alt="" *ngIf="blogId == 3">
+          <img style="height:300px;text-align: center" src="./assets/stark.jpg" alt="" *ngIf="blogId == 4">
+          <img style="height:300px;text-align: center" src="./assets/umber.jpg" alt="" *ngIf="blogId == 5">
+          <img style="height:300px;text-align: center" src="./assets/mystery-knight.jpg" alt="" *ngIf="blogId == 6">
+          <img style="height:300px;text-align: center" src="./assets/wylde1.jpg" alt="" *ngIf="blogId == 7">
+          <img style="height:300px;text-align: center" src="./assets/cerwyn.jpg" alt="" *ngIf="blogId == 8">
+          <img style="height:300px;text-align: center" src="./assets/jonnel.jpg" alt="" *ngIf="blogId == 9">
+          <img style="height:300px;text-align: center" src="./assets/frey.png" alt="" *ngIf="blogId == 10">
+        </div>
+        <div class="image" *ngIf="flag3">
+          <img style="height:300px;text-align: center"  src="./assets/algood.jpg" alt="" *ngIf="blogId == 1">
+          <img style="height:300px;text-align: center" src="./assets/allyrion.jpg" alt="" *ngIf="blogId == 2">
+          <img style="height:300px;text-align: center" src="./assets/Amber.jpg" alt="" *ngIf="blogId == 3">
+          <img style="height:300px;text-align: center" src="./assets/Ambrose.png" alt="" *ngIf="blogId == 4">
+          <img style="height:300px;text-align: center" src="./assets/Appleton.png" alt="" *ngIf="blogId == 5">
+          <img style="height:300px;text-align: center" src="./assets/arryn.jpg" alt="" *ngIf="blogId == 6">
+          <img style="height:300px;text-align: center" src="./assets/errie.jpg" alt="" *ngIf="blogId == 7">
+          <img style="height:300px;text-align: center" src="./assets/ashford.jpg" alt="" *ngIf="blogId == 8">
+          <img style="height:300px;text-align: center" src="./assets/Ashwood.png" alt="" *ngIf="blogId == 9">
+          <img style="height:300px;text-align: center" src="./assets/baelish.jpg" alt="" *ngIf="blogId == 10">
+        </div>
+
+        <h2>{{name}}</h2>
+        
+        
+        
+        <h5 *ngIf="(flag1) && (author.length > 0)"> Author is: <span *ngFor="let tag of author; let first = first ,let last = last ">{{author}}{{last?"":","}}</span></h5>
+        
+        
+          <hr>
+          
+          <hr>
+          
+          <h5 *ngIf="flag1">Pages: {{GotData.numberOfPages}}</h5>
+          <h5 *ngIf="flag1">Publisher: {{publisher}}</h5>
+          <h5 *ngIf="flag1">Country: {{GotData.country}}</h5>
+          <h5 *ngIf="flag1">Mediatype: {{mediatype}}</h5>
+          <h5 *ngIf="flag1">Released on  {{GotData.released | date}}</h5>
+
+          <h5 *ngIf="flag2">Culture: {{culture}}</h5>
+          <h5 *ngIf="flag2">Born  {{born}}</h5>
+          <h5 *ngIf="flag2">Died: {{died}}</h5>
+          <h5 *ngIf="flag2">Aliases: {{aliases}}</h5>
+          
+          <h5 *ngIf="flag3">Region: {{region}}</h5>
+          <h5 *ngIf="flag3">Words: {{words}}</h5>
+          <h5 *ngIf="flag3">CoatOfArms: {{coatOfArms}}</h5>
+          <h5 *ngIf="(flag2) || (flag3) && (titles.length > 0)"> Titles: <span *ngFor="let tag of titles; let first = first ,let last = last ">{{titles}}{{last?"":","}}</span></h5>
+          
+        </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-4">
+      
+    </div>
+    <div class="col-md-4">
+      <a class="btn btn-warning" (click)="cancel()" >Go Back to Home</a>
+    </div>
+
+    <div class="col-md-4">
+        
+      </div>
+  
+     
+  </div>
+  </div>

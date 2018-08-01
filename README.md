@@ -1,3 +1,7 @@
+The link to the hosted website:- 
+https://nisith116.github.io/GOTencyclopedia/
+
+
 # GOTWikiApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
